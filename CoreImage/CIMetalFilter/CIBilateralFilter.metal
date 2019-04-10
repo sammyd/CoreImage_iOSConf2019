@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2019 Razeware LLC
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+#include <metal_stdlib>
+using namespace metal;
+
+#include <CoreImage/CoreImage.h>
+
+extern "C" { namespace coreimage {
+  float intensity(float4 pixel) {
+    return 0.299 * pixel.r + 0.587 * pixel.g + 0.114 * pixel.b;
+  }
+  
+  float intensityDelta(float4 pixel1, float4 pixel2) {
+    return intensity(pixel1) - intensity(pixel2);
+  }
+  
+  float4 bilateralFilterKernel(sampler src, float kernelRadius_f, float sigmaSpatial, float sigmaRange) {
+    float4 input = src.sample(src.coord());
+    float3 premultipliedRunningSum = 0;
+    float weightRunningSum = 0;
+    int kernelRadius = int(kernelRadius_f);
+
+    for (int i = -kernelRadius; i <= kernelRadius; i++) {
+      for (int j = -kernelRadius; j <= kernelRadius; j++) {
+        float4 referenceInput = src.sample(src.coord() + float2(i, j));
+
+        float weight = exp ( - (i * i + j * j) / (2 * sigmaSpatial * sigmaSpatial) - pow(intensityDelta(input, referenceInput), 2.0) / (2 * sigmaRange * sigmaRange));
+
+        weightRunningSum += weight;
+        premultipliedRunningSum += weight * referenceInput.rgb;
+      }
+    }
+
+    return float4(premultipliedRunningSum / weightRunningSum, input.a);
+  }
+}}
+
