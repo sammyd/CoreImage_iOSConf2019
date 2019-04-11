@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="CIMetalFilter" id="1Xt-HY-uBw">
+                            <menuItem title="GreatWhenItWorks" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="CIMetalFilter" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="GreatWhenItWorks" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About CIMetalFilter" id="5kV-Vb-QxS">
+                                        <menuItem title="About GreatWhenItWorks" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide CIMetalFilter" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide GreatWhenItWorks" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit CIMetalFilter" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit GreatWhenItWorks" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -660,7 +660,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="CIMetalFilter Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="GreatWhenItWorks Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -724,10 +724,10 @@
                                 <rect key="frame" x="278" y="20" width="258" height="240"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" verticalHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nam-7P-bKD">
-                                        <rect key="frame" x="0.0" y="139" width="213" height="101"/>
+                                        <rect key="frame" x="0.0" y="223" width="258" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="asf-hd-GfC">
-                                                <rect key="frame" x="-2" y="84" width="72" height="17"/>
+                                                <rect key="frame" x="-2" y="0.0" width="72" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Kernel Size" id="uAr-UA-FSv">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -735,14 +735,14 @@
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-WA-TJL">
-                                                <rect key="frame" x="76" y="84" width="96" height="19"/>
+                                                <rect key="frame" x="76" y="0.0" width="141" height="19"/>
                                                 <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="20" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="Hbq-2T-0EH"/>
                                                 <connections>
                                                     <action selector="handleSliderMoved:" target="XfG-lQ-9wD" id="a0P-qy-gRU"/>
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jhr-be-CIX">
-                                                <rect key="frame" x="178" y="84" width="37" height="17"/>
+                                                <rect key="frame" x="223" y="0.0" width="37" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="nkc-Ss-x9N">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -762,7 +762,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" verticalHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gp1-oX-OKE">
-                                        <rect key="frame" x="0.0" y="119" width="228" height="17"/>
+                                        <rect key="frame" x="0.0" y="203" width="258" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7d1-x4-cyj">
                                                 <rect key="frame" x="-2" y="0.0" width="87" height="17"/>
@@ -773,14 +773,14 @@
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qV2-8d-Azg">
-                                                <rect key="frame" x="91" y="0.0" width="96" height="19"/>
+                                                <rect key="frame" x="91" y="0.0" width="126" height="19"/>
                                                 <sliderCell key="cell" state="on" alignment="left" maxValue="30" doubleValue="15" tickMarkPosition="above" sliderType="linear" id="4mr-mH-z4V"/>
                                                 <connections>
                                                     <action selector="handleSliderMoved:" target="XfG-lQ-9wD" id="tMB-3d-55A"/>
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rle-N4-Cvk">
-                                                <rect key="frame" x="193" y="0.0" width="37" height="17"/>
+                                                <rect key="frame" x="223" y="0.0" width="37" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="p3G-Hg-tO8">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -800,7 +800,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ML6-ZP-8DY">
-                                        <rect key="frame" x="0.0" y="99" width="238" height="17"/>
+                                        <rect key="frame" x="0.0" y="183" width="258" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CBb-Sb-yAZ">
                                                 <rect key="frame" x="-2" y="0.0" width="97" height="17"/>
@@ -811,14 +811,14 @@
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="PFd-fY-LPc">
-                                                <rect key="frame" x="101" y="-2" width="96" height="21"/>
+                                                <rect key="frame" x="101" y="-2" width="116" height="21"/>
                                                 <sliderCell key="cell" state="on" alignment="left" maxValue="0.5" doubleValue="0.20000000000000001" tickMarkPosition="above" sliderType="linear" id="zGn-QR-Bzs"/>
                                                 <connections>
                                                     <action selector="handleSliderMoved:" target="XfG-lQ-9wD" id="IoT-1K-IiU"/>
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DJJ-vd-nPD">
-                                                <rect key="frame" x="203" y="0.0" width="37" height="17"/>
+                                                <rect key="frame" x="223" y="0.0" width="37" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="zgj-pv-lxh">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -838,7 +838,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <customView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-mz-xcc">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="180"/>
                                     </customView>
                                 </subviews>
                                 <visibilityPriorities>

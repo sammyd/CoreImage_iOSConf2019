@@ -16,13 +16,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		229BE0F1225DC2D100BA640C /* CIMetalFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMetalFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		229BE0F1225DC2D100BA640C /* GreatWhenItWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatWhenItWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BE0F4225DC2D100BA640C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BE0F6225DC2D100BA640C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		229BE0F8225DC2D200BA640C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229BE0FB225DC2D200BA640C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		229BE0FD225DC2D200BA640C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		229BE0FE225DC2D200BA640C /* CoreImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreImage.entitlements; sourceTree = "<group>"; };
+		229BE0FE225DC2D200BA640C /* GreatWhenItWorks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GreatWhenItWorks.entitlements; sourceTree = "<group>"; };
 		229BE104225DC2EB00BA640C /* CIBilateralFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CIBilateralFilter.metal; sourceTree = "<group>"; };
 		229BE108225DE62D00BA640C /* BilateralFilterImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilateralFilterImageProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +41,7 @@
 		229BE0E8225DC2D100BA640C = {
 			isa = PBXGroup;
 			children = (
-				229BE0F3225DC2D100BA640C /* CIMetalFilter */,
+				229BE0F3225DC2D100BA640C /* GreatWhenItWorks */,
 				229BE0F2225DC2D100BA640C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,12 +49,12 @@
 		229BE0F2225DC2D100BA640C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				229BE0F1225DC2D100BA640C /* CIMetalFilter.app */,
+				229BE0F1225DC2D100BA640C /* GreatWhenItWorks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		229BE0F3225DC2D100BA640C /* CIMetalFilter */ = {
+		229BE0F3225DC2D100BA640C /* GreatWhenItWorks */ = {
 			isa = PBXGroup;
 			children = (
 				229BE0F4225DC2D100BA640C /* AppDelegate.swift */,
@@ -62,19 +62,19 @@
 				229BE0F8225DC2D200BA640C /* Assets.xcassets */,
 				229BE0FA225DC2D200BA640C /* Main.storyboard */,
 				229BE0FD225DC2D200BA640C /* Info.plist */,
-				229BE0FE225DC2D200BA640C /* CoreImage.entitlements */,
+				229BE0FE225DC2D200BA640C /* GreatWhenItWorks.entitlements */,
 				229BE104225DC2EB00BA640C /* CIBilateralFilter.metal */,
 				229BE108225DE62D00BA640C /* BilateralFilterImageProcessor.swift */,
 			);
-			path = CIMetalFilter;
+			path = GreatWhenItWorks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		229BE0F0225DC2D100BA640C /* CIMetalFilter */ = {
+		229BE0F0225DC2D100BA640C /* GreatWhenItWorks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 229BE101225DC2D200BA640C /* Build configuration list for PBXNativeTarget "CIMetalFilter" */;
+			buildConfigurationList = 229BE101225DC2D200BA640C /* Build configuration list for PBXNativeTarget "GreatWhenItWorks" */;
 			buildPhases = (
 				229BE0ED225DC2D100BA640C /* Sources */,
 				229BE0EE225DC2D100BA640C /* Frameworks */,
@@ -84,9 +84,9 @@
 			);
 			dependencies = (
 			);
-			name = CIMetalFilter;
+			name = GreatWhenItWorks;
 			productName = CoreImage;
-			productReference = 229BE0F1225DC2D100BA640C /* CIMetalFilter.app */;
+			productReference = 229BE0F1225DC2D100BA640C /* GreatWhenItWorks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 229BE0EC225DC2D100BA640C /* Build configuration list for PBXProject "CIMetalFilter" */;
+			buildConfigurationList = 229BE0EC225DC2D100BA640C /* Build configuration list for PBXProject "GreatWhenItWorks" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				229BE0F0225DC2D100BA640C /* CIMetalFilter */,
+				229BE0F0225DC2D100BA640C /* GreatWhenItWorks */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +282,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoreImage/CoreImage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/CIMetalFilter/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -302,7 +302,7 @@
 				CODE_SIGN_ENTITLEMENTS = CoreImage/CoreImage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/CIMetalFilter/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -318,7 +318,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		229BE0EC225DC2D100BA640C /* Build configuration list for PBXProject "CIMetalFilter" */ = {
+		229BE0EC225DC2D100BA640C /* Build configuration list for PBXProject "GreatWhenItWorks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				229BE0FF225DC2D200BA640C /* Debug */,
@@ -327,7 +327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		229BE101225DC2D200BA640C /* Build configuration list for PBXNativeTarget "CIMetalFilter" */ = {
+		229BE101225DC2D200BA640C /* Build configuration list for PBXNativeTarget "GreatWhenItWorks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				229BE102225DC2D200BA640C /* Debug */,
