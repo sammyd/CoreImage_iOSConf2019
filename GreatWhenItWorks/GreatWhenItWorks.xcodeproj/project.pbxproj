@@ -57,16 +57,48 @@
 		229BE0F3225DC2D100BA640C /* GreatWhenItWorks */ = {
 			isa = PBXGroup;
 			children = (
-				229BE0F4225DC2D100BA640C /* AppDelegate.swift */,
-				229BE0F6225DC2D100BA640C /* ViewController.swift */,
-				229BE0F8225DC2D200BA640C /* Assets.xcassets */,
-				229BE0FA225DC2D200BA640C /* Main.storyboard */,
-				229BE0FD225DC2D200BA640C /* Info.plist */,
+				22FD7795225F1A2800D0C2E1 /* Guff */,
+				22FD7797225F1A3D00D0C2E1 /* Controllers */,
+				22FD7796225F1A3600D0C2E1 /* View */,
+				22FD7798225F1A9000D0C2E1 /* Filters */,
+			);
+			path = GreatWhenItWorks;
+			sourceTree = "<group>";
+		};
+		22FD7795225F1A2800D0C2E1 /* Guff */ = {
+			isa = PBXGroup;
+			children = (
 				229BE0FE225DC2D200BA640C /* GreatWhenItWorks.entitlements */,
+				229BE0FD225DC2D200BA640C /* Info.plist */,
+				229BE0F8225DC2D200BA640C /* Assets.xcassets */,
+				229BE0F4225DC2D100BA640C /* AppDelegate.swift */,
+			);
+			path = Guff;
+			sourceTree = "<group>";
+		};
+		22FD7796225F1A3600D0C2E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				229BE0FA225DC2D200BA640C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22FD7797225F1A3D00D0C2E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				229BE0F6225DC2D100BA640C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22FD7798225F1A9000D0C2E1 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
 				229BE104225DC2EB00BA640C /* CIBilateralFilter.metal */,
 				229BE108225DE62D00BA640C /* BilateralFilterImageProcessor.swift */,
 			);
-			path = GreatWhenItWorks;
+			path = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,14 +314,14 @@
 				CODE_SIGN_ENTITLEMENTS = CoreImage/CoreImage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Guff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MTLLINKER_FLAGS = "-cikernel";
 				MTL_COMPILER_FLAGS = "-fcikernel";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.CIMetalFilter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.GreatWhenItWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -302,14 +334,14 @@
 				CODE_SIGN_ENTITLEMENTS = CoreImage/CoreImage.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Guff/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MTLLINKER_FLAGS = "-cikernel";
 				MTL_COMPILER_FLAGS = "-fcikernel";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.CIMetalFilter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.GreatWhenItWorks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
