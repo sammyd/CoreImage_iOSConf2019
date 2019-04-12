@@ -42,10 +42,7 @@ extern "C" { namespace coreimage {
     return float4(red, green, blue, pixel.a);
   }
   
-  float intensityDelta(float4 pixel1, float4 pixel2) {
-    return intensity(pixel1) - intensity(pixel2);
-  }
-  
+  // KERNEL
   float4 bilateralFilterKernel(sampler src, float kernelRadius_f, float sigmaSpatial, float sigmaRange) {
     float4 input = src.sample(src.coord());
     float3 premultipliedRunningSum = 0;
@@ -56,7 +53,8 @@ extern "C" { namespace coreimage {
       for (int j = -kernelRadius; j <= kernelRadius; j++) {
         float4 referenceInput = src.sample(src.coord() + float2(i, j));
 
-        float weight = exp ( - (i * i + j * j) / (2 * sigmaSpatial * sigmaSpatial) - pow((input.r - referenceInput.r), 2.0) / (2 * sigmaRange * sigmaRange));
+        float weight = exp ( - (i * i + j * j) / (2 * sigmaSpatial * sigmaSpatial)
+                             - pow((input.r - referenceInput.r), 2.0) / (2 * sigmaRange * sigmaRange));
 
         weightRunningSum += weight;
         premultipliedRunningSum += weight * referenceInput.rgb;
@@ -66,10 +64,10 @@ extern "C" { namespace coreimage {
     return float4(premultipliedRunningSum / weightRunningSum, input.a);
   }
   
+  // KERNEL
   float4 ycbcrToRgbFilterKernel(sample_t s) {
     return ycbcrToRgb(s);
   }
-  
   
   
   
@@ -87,6 +85,7 @@ extern "C" { namespace coreimage {
     return (pixel.r - intensity(pixel)) / (2 * (1 - K_R));
   }
   
+  // KERNEL
   float4 rgbToYcbcrFilterKernel(sample_t s) {
     float y = intensity(s);
     float cb = blueDifference(s);
