@@ -69,7 +69,10 @@ class ViewController: NSViewController {
     let filter = CIRgbToYcbcrFilter()
     filter.inputImage = CIImage(nsImage: image)
     
-    guard let output = filter.outputImage else { return }
+    let inverseFilter = CIYcbcrToRgbFilter()
+    inverseFilter.inputImage = filter.outputImage
+    
+    guard let output = inverseFilter.outputImage else { return }
     
     afterImageView.image = NSImage(ciImage: output)
   }

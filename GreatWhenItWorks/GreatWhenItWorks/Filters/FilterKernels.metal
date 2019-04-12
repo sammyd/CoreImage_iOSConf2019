@@ -87,7 +87,10 @@ extern "C" { namespace coreimage {
   
   // KERNEL
   float4 rgbToYcbcrFilterKernel(sample_t s) {
-    return s;
+    float y = intensity(s);
+    float cb = blueDifference(s);
+    float cr = redDifference(s);
+    return float4(y, cb, cr, s.a);
   }
 }}
 
