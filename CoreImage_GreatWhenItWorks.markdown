@@ -1,38 +1,7 @@
 # Core Image: Great When it Works
 
-## Part 1: Interrogating filters
 
-Your first snippet:
-
-```
-import CoreImage
-```
-
-```
-// List all the filters
-CIFilter.filterNames(inCategories: nil)
-```
-
-```
-// Learn about a filter
-CIFilter.localizedDescription(forFilterName: "CIBokehBlur")
-```
-
-```
-// Instantiate it
-let f = CIFilter(name: "CIBokehBlur")!
-```
-
-```
-// Interrogate it
-f.inputKeys
-```
-
-```
-f.attributes
-```
-
-## Part 2: Using filters
+## Part 1: Using filters
 
 Load an image:
 
@@ -76,7 +45,7 @@ with parameters:
 ```
 
 
-## Part 3: Building the depth filter
+## Part 2: Building the depth filter
 
 Import the depth mask
 
@@ -114,7 +83,7 @@ let composite = foreground.applyingFilter("CIBlendWithMask",
 ```
 
 
-## Part 4: Building a colour kernel
+## Part 3: Building a colour kernel
 
 A passthrough colour kernel:
 
@@ -194,7 +163,7 @@ let inverseFilter = CIYcbcrToRgbFilter()
 ```
 
 
-## Part 5: Building the bilateral filter
+## Part 4: Building the bilateral filter
 
 Switch to using the bilateral filter processor in the VC:
 
