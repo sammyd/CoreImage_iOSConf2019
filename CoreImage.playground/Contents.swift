@@ -1,18 +1,7 @@
 import UIKit
-import CoreImage
-import Vision
 import PlaygroundSupport
 
-//PlaygroundPage.current.needsIndefiniteExecution
-
-
-
 //: # Creating Images
-
-// Let's create a barcode
-// AVFoundation—detection during capture
-// Vision—detection after capture
-// CoreImage—creation
 
 let url = Bundle.main.url(forResource: "IMG_5276", withExtension: "HEIC")!
 var options = [CIImageOption.auxiliaryPortraitEffectsMatte: true, CIImageOption.applyOrientationProperty: true]
@@ -29,7 +18,7 @@ let resized = image.transformed(by: CGAffineTransform(scaleX: 0.125, y: 0.125))
 
 
 let foreground = resized.applyingFilter("CIVibrance", parameters: ["inputAmount" : 0.7])
-let background = resized.applyingFilter("CIVibrance", parameters: ["inputAmount": -0.8]).applyingFilter("CIDiscBlur", parameters: ["inputRadius": 8]).cropped(to: resized.extent)//.applyingFilter("CIVignette", parameters: ["inputIntensity" : 0.7, "inputRadius": 20])
+let background = resized.applyingFilter("CIVibrance", parameters: ["inputAmount": -0.8]).applyingFilter("CIDiscBlur", parameters: ["inputRadius": 8]).cropped(to: resized.extent).applyingFilter("CIVignette", parameters: ["inputIntensity" : 0.7, "inputRadius": 20])
 
 let composite = foreground.applyingFilter("CIBlendWithMask", parameters: ["inputBackgroundImage": background, "inputMaskImage": matteResized])
 
@@ -38,12 +27,4 @@ let composite = foreground.applyingFilter("CIBlendWithMask", parameters: ["input
 let uiImage = UIImage(ciImage: composite)
 PlaygroundPage.current.liveView = UIImageView(image: uiImage)
 
-
-//: # Filtering (Depth)
-
-
-//: # Concatenating Filters
-
-
-//: # Creating Custom Filters
 
