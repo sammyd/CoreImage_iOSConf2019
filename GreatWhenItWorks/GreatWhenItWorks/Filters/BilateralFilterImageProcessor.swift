@@ -49,9 +49,15 @@ class BilateralFilerImageProcessor {
     let scaleFactor = 600 / max(ciimage.extent.width, ciimage.extent.height);
     let downsized = ciimage.transformed(by: CGAffineTransform.init(scaleX: scaleFactor, y: scaleFactor))
     
-    filter.inputImage = downsized
+    let ycbcrFilter = CIRgbToYcbcrFilter()
+    ycbcrFilter.inputImage = downsized
     
-    guard let outputImage = filter.outputImage else { return .none }
+    filter.inputImage = ycbcrFilter.outputImage
+    
+    let rgbFilter = CIYcbcrToRgbFilter()
+    rgbFilter.inputImage = filter.outputImage
+
+    guard let outputImage = rgbFilter.outputImage else { return .none }
 
     return NSImage(ciImage: outputImage)
   }
@@ -81,6 +87,8 @@ fileprivate class BilateralFilter: CIFilter {
   override var outputImage: CIImage? {
     guard let inputImage = inputImage else { return .none }
     
-    return inputImage
+    let sampler = CISampler(image: inputImage)
+    
+    return apply(kernel, arguments: [sampler, kernelRadius, sigmaSpatial, sigmaRange], options: [kCIApplyOptionExtent: inputImage.extent.toArray])
   }
 }

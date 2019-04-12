@@ -66,15 +66,7 @@ class ViewController: NSViewController {
   private func processImage() {
     guard let image = beforeImageView.image else { return }
     
-    let filter = CIRgbToYcbcrFilter()
-    filter.inputImage = CIImage(nsImage: image)
-    
-    let inverseFilter = CIYcbcrToRgbFilter()
-    inverseFilter.inputImage = filter.outputImage
-    
-    guard let output = inverseFilter.outputImage else { return }
-    
-    afterImageView.image = NSImage(ciImage: output)
+    afterImageView.image = imageProcessor.process(image: image)
   }
 }
 
