@@ -85,6 +85,9 @@ extern "C" { namespace coreimage {
     return (pixel.r - intensity(pixel)) / (2 * (1 - K_R));
   }
   
-
+  // KERNEL
+  float4 rgbToYcbcrFilterKernel(sample_t s) {
+    return s;
+  }
 }}
 

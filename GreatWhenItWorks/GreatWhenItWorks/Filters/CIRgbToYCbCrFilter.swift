@@ -23,5 +23,26 @@
 import CoreImage
 
 class CIRgbToYcbcrFilter: CIFilter {
+  private lazy var kernel: CIColorKernel = {
+    guard
+      let url = Bundle.main.url(forResource: "default", withExtension: "metallib"),
+      let data = try? Data(contentsOf: url) else {
+        fatalError("Unable to get metallib")
+    }
+    
+    guard let kernel = try? CIColorKernel(functionName: "rgbToYcbcrFilterKernel", fromMetalLibraryData: data) else {
+      fatalError("Unable to create CIColorKernel from rgbToYcbcrFilterKernel")
+    }
+    
+    return kernel
+  }()
+  
+  var inputImage: CIImage?
+  
+  override var outputImage: CIImage? {
+    guard let inputImage = inputImage else { return .none }
+    
+    return apply(kernel, arguments: [inputImage], options: [kCIApplyOptionExtent: inputImage.extent.toArray])
+  }
 
 }
