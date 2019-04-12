@@ -31,17 +31,6 @@ using namespace metal;
 
 
 extern "C" { namespace coreimage {
-  float intensity(float4 pixel) {
-    return K_R * pixel.r + K_G * pixel.g + K_B * pixel.b;
-  }
-  
-  float blueDifference(float4 pixel) {
-    return (pixel.b - intensity(pixel)) / (2 * (1 - K_B));
-  }
-  
-  float redDifference(float4 pixel) {
-    return (pixel.r - intensity(pixel)) / (2 * (1 - K_R));
-  }
   
   float4 ycbcrToRgb(float4 pixel) {
     float y  = pixel.r;
@@ -77,15 +66,32 @@ extern "C" { namespace coreimage {
     return float4(premultipliedRunningSum / weightRunningSum, input.a);
   }
   
+  float4 ycbcrToRgbFilterKernel(sample_t s) {
+    return ycbcrToRgb(s);
+  }
+  
+  
+  
+  
+  
+  
+  float intensity(float4 pixel) {
+    return K_R * pixel.r + K_G * pixel.g + K_B * pixel.b;
+  }
+  
+  float blueDifference(float4 pixel) {
+    return (pixel.b - intensity(pixel)) / (2 * (1 - K_B));
+  }
+  
+  float redDifference(float4 pixel) {
+    return (pixel.r - intensity(pixel)) / (2 * (1 - K_R));
+  }
+  
   float4 rgbToYcbcrFilterKernel(sample_t s) {
     float y = intensity(s);
     float cb = blueDifference(s);
     float cr = redDifference(s);
     return float4(y, cb, cr, s.a);
-  }
-  
-  float4 ycbcrToRgbFilterKernel(sample_t s) {
-    return ycbcrToRgb(s);
   }
 }}
 
