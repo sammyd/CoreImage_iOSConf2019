@@ -44,20 +44,23 @@ class BilateralFilerImageProcessor {
   }
   
   func process(image: NSImage) -> NSImage? {
-    guard let imageData = image.tiffRepresentation else { return .none }
-    
-    let ciimage = CIImage(data: imageData)!
+    guard let ciimage = CIImage(nsImage: image) else { return .none }
     
     let scaleFactor = 600 / max(ciimage.extent.width, ciimage.extent.height);
     let downsized = ciimage.transformed(by: CGAffineTransform.init(scaleX: scaleFactor, y: scaleFactor))
-    filter.inputImage = downsized
     
-    guard let outputImage = filter.outputImage else { return .none }
+    let ycbcrFilter = CIRgbToYcbcrFilter()
+    ycbcrFilter.inputImage = downsized
     
-    let outputRep = NSCIImageRep(ciImage: outputImage)
-    let outNSImage = NSImage(size: outputRep.size)
-    outNSImage.addRepresentation(outputRep)
-    return outNSImage
+    filter.inputImage = ycbcrFilter.outputImage
+    
+    let rgbFilter = CIYcbcrToRgbFilter()
+    rgbFilter.inputImage = filter.outputImage
+    
+    
+    guard let outputImage = rgbFilter.outputImage else { return .none }
+
+    return NSImage(ciImage: outputImage)
   }
 
 }
@@ -88,16 +91,5 @@ fileprivate class BilateralFilter: CIFilter {
     let sampler = CISampler(image: inputImage)
     
     return apply(kernel, arguments: [sampler, kernelRadius, sigmaSpatial, sigmaRange], options: [kCIApplyOptionExtent: inputImage.extent.toArray])
-  }
-}
-
-fileprivate extension CGRect {
-  var toArray: [CGFloat] {
-    return [
-      origin.x,
-      origin.y,
-      size.width,
-      size.height
-    ]
   }
 }

@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226847F8225FA7EB00312986 /* CIYcbcrToRgbFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226847F7225FA7EB00312986 /* CIYcbcrToRgbFilter.swift */; };
+		226847FA225FA7FB00312986 /* CIRgbToYCbCrFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226847F9225FA7FB00312986 /* CIRgbToYCbCrFilter.swift */; };
+		226847FC225FACCA00312986 /* NSImage+CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226847FB225FACCA00312986 /* NSImage+CIImage.swift */; };
+		226847FE225FADD500312986 /* CIImage+NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226847FD225FADD500312986 /* CIImage+NSImage.swift */; };
+		2268480022605B6400312986 /* CGRect+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226847FF22605B6400312986 /* CGRect+Array.swift */; };
 		229BE0F5225DC2D100BA640C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BE0F4225DC2D100BA640C /* AppDelegate.swift */; };
 		229BE0F7225DC2D100BA640C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BE0F6225DC2D100BA640C /* ViewController.swift */; };
 		229BE0F9225DC2D200BA640C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229BE0F8225DC2D200BA640C /* Assets.xcassets */; };
 		229BE0FC225DC2D200BA640C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229BE0FA225DC2D200BA640C /* Main.storyboard */; };
-		229BE105225DC2EB00BA640C /* CIBilateralFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 229BE104225DC2EB00BA640C /* CIBilateralFilter.metal */; };
+		229BE105225DC2EB00BA640C /* FilterKernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 229BE104225DC2EB00BA640C /* FilterKernels.metal */; };
 		229BE109225DE62D00BA640C /* BilateralFilterImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BE108225DE62D00BA640C /* BilateralFilterImageProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		226847F7225FA7EB00312986 /* CIYcbcrToRgbFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIYcbcrToRgbFilter.swift; sourceTree = "<group>"; };
+		226847F9225FA7FB00312986 /* CIRgbToYCbCrFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIRgbToYCbCrFilter.swift; sourceTree = "<group>"; };
+		226847FB225FACCA00312986 /* NSImage+CIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+CIImage.swift"; sourceTree = "<group>"; };
+		226847FD225FADD500312986 /* CIImage+NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+NSImage.swift"; sourceTree = "<group>"; };
+		226847FF22605B6400312986 /* CGRect+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Array.swift"; sourceTree = "<group>"; };
 		229BE0F1225DC2D100BA640C /* GreatWhenItWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatWhenItWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BE0F4225DC2D100BA640C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229BE0F6225DC2D100BA640C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +33,7 @@
 		229BE0FB225DC2D200BA640C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		229BE0FD225DC2D200BA640C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		229BE0FE225DC2D200BA640C /* GreatWhenItWorks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GreatWhenItWorks.entitlements; sourceTree = "<group>"; };
-		229BE104225DC2EB00BA640C /* CIBilateralFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CIBilateralFilter.metal; sourceTree = "<group>"; };
+		229BE104225DC2EB00BA640C /* FilterKernels.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FilterKernels.metal; sourceTree = "<group>"; };
 		229BE108225DE62D00BA640C /* BilateralFilterImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilateralFilterImageProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +82,9 @@
 				229BE0FD225DC2D200BA640C /* Info.plist */,
 				229BE0F8225DC2D200BA640C /* Assets.xcassets */,
 				229BE0F4225DC2D100BA640C /* AppDelegate.swift */,
+				226847FB225FACCA00312986 /* NSImage+CIImage.swift */,
+				226847FD225FADD500312986 /* CIImage+NSImage.swift */,
+				226847FF22605B6400312986 /* CGRect+Array.swift */,
 			);
 			path = Guff;
 			sourceTree = "<group>";
@@ -95,8 +108,10 @@
 		22FD7798225F1A9000D0C2E1 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				229BE104225DC2EB00BA640C /* CIBilateralFilter.metal */,
+				229BE104225DC2EB00BA640C /* FilterKernels.metal */,
 				229BE108225DE62D00BA640C /* BilateralFilterImageProcessor.swift */,
+				226847F7225FA7EB00312986 /* CIYcbcrToRgbFilter.swift */,
+				226847F9225FA7FB00312986 /* CIRgbToYCbCrFilter.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -171,9 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				229BE105225DC2EB00BA640C /* CIBilateralFilter.metal in Sources */,
+				2268480022605B6400312986 /* CGRect+Array.swift in Sources */,
+				226847F8225FA7EB00312986 /* CIYcbcrToRgbFilter.swift in Sources */,
+				226847FC225FACCA00312986 /* NSImage+CIImage.swift in Sources */,
+				226847FE225FADD500312986 /* CIImage+NSImage.swift in Sources */,
+				229BE105225DC2EB00BA640C /* FilterKernels.metal in Sources */,
 				229BE0F7225DC2D100BA640C /* ViewController.swift in Sources */,
 				229BE0F5225DC2D100BA640C /* AppDelegate.swift in Sources */,
+				226847FA225FA7FB00312986 /* CIRgbToYCbCrFilter.swift in Sources */,
 				229BE109225DE62D00BA640C /* BilateralFilterImageProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CoreImage/CoreImage.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GreatWhenItWorks/Guff/GreatWhenItWorks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Guff/Info.plist";
@@ -331,7 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CoreImage/CoreImage.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GreatWhenItWorks/Guff/GreatWhenItWorks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/GreatWhenItWorks/Guff/Info.plist";

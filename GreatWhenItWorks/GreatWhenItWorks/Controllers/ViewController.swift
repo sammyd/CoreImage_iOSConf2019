@@ -46,7 +46,6 @@ class ViewController: NSViewController {
     processImage()
   }
   
-  
   let imageProcessor = BilateralFilerImageProcessor()
 
   override func viewDidLoad() {
@@ -68,6 +67,18 @@ class ViewController: NSViewController {
     guard let image = beforeImageView.image else { return }
     
     afterImageView.image = imageProcessor.process(image: image)
+
+//    let filter = CIRgbToYcbcrFilter()
+//    filter.inputImage = CIImage(nsImage: image)
+//
+//    let inverseFilter = CIYcbcrToRgbFilter()
+//    inverseFilter.inputImage = filter.outputImage
+//
+//
+//    guard let output = inverseFilter.outputImage else { return }
+//
+//
+//    afterImageView.image = NSImage(ciImage: output)
   }
 }
 
